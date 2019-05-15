@@ -3,7 +3,8 @@
 !.fehbg
 !backlighter.sh
 !.config/i3*
-!.config/qutebrowser
+!.config/qutebrowser/
+!.config/fish/
 !.gitignore
 !.sh/
 !.task
