@@ -1,0 +1,13 @@
+*
+!backlighter.sh
+!.config/i3*
+!.config/qutebrowser
+!.gitignore
+!.sh/
+!.task
+!.taskrc
+!.vim
+!.vimrc
+.Xauthority
+.xsel.log
+![Xx]*

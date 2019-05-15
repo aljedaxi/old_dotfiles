@@ -13,7 +13,8 @@ exec xmodmap ~/.Xmodmap
 exec setxkbmap us -variant colemak
 exec qutebrowser
 exec telegram-desktop
-exec ~/.fehbg &
+exec ~/.fehbg
+exec copyq 
 
 # destruction of all borders: maximum slickness, minimum dough.
 for_window [instance=".*"] border none
