@@ -1,4 +1,6 @@
 *
+!.BG.png
+!.fehbg
 !backlighter.sh
 !.config/i3*
 !.config/qutebrowser
@@ -8,6 +10,6 @@
 !.taskrc
 !.vim
 !.vimrc
+![Xx]*
 .Xauthority
 .xsel.log
-![Xx]*
