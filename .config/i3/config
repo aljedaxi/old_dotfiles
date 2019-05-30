@@ -1,24 +1,15 @@
 set $mod Mod4
 set $n Mod1
-set $term urxvtc -visual -sb -st -tr -rv
+set $term urxvt -visual -sb -st -tr -rv
 
-assign [title="ncmpcpp"] 1
-assign [title="alsamixer"] 1
+#assign [title="ncmpcpp"] 3
+#assign [title="alsamixer"] 3
 assign [title="discord"] 2
 assign [title="Discord"] 2
 assign [title="qutebrowser"] 3
 
-exec urxvtd -q -f -o
-exec xmodmap ~/.Xmodmap 
-exec setxkbmap us -variant colemak
+#exec $term -e sudo aptitude
 exec qutebrowser
-exec telegram-desktop
-exec ~/.fehbg
-exec copyq 
-
-# destruction of all borders: maximum slickness, minimum dough.
-for_window [instance=".*"] border none
-for_window [class=".*"] border none
 
 # use window title, but no border \\ 1 px border \\ nothing
 bindsym $mod+t border normal 0
@@ -28,17 +19,15 @@ bindsym $mod+Shift+space move scratchpad
 bindsym $mod+Control+space move workspace 1
 bindsym $mod+space scratchpad show
 
+for_window [instance=".*"] border none
+for_window [class=".*"] border none
+
 # Font for window titles. Will also be used by the bar unless a different font # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left # text rendering and scalability on retina/hidpi displays (thanks to pango).
 font pango:DejaVu Sans Mono 8
-#font pango:Terminus
 # Before i3 v4.8, we used to recommend this one as the default:
-#font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # The font above is very space-efficient, that is, it looks good, sharp and # clear in small sizes. However, its unicode glyph coverage is limited, the old # X core fonts rendering does not support right-to-left and this being a bitmap # font, it doesn’t scale on retina/hidpi displays.
-
-# Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -47,8 +36,6 @@ bindsym $mod+Return exec $term
 bindsym $mod+q kill
 
 #hotkeys
-
-bindsym $mod+shift+i exec ./Downloads/iris-mini-0.3.8.AppImage
 
 bindsym $mod+shift+a exec $term -e alsamixer
 bindsym $mod+shift+n exec $term -e ncmpcpp
@@ -72,7 +59,7 @@ focus_follows_mouse 1
 # bindsym $mod+d exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that # installed.
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+d exec rofi -show run
 
 # change focus
 bindsym $mod+h focus left

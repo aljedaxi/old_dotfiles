@@ -5,6 +5,7 @@
 !.config/i3*
 !.config/qutebrowser/
 !.config/fish/
+!.config/rofi/
 !.gitignore
 !.sh/
 !.task
