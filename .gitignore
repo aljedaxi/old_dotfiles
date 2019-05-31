@@ -6,6 +6,7 @@
 !.config/qutebrowser/
 !.config/fish/
 !.config/rofi/
+!lain.color
 !.gitignore
 !.sh/
 !.task
