@@ -1,6 +1,6 @@
 set $mod Mod4
 set $n Mod1
-set $term urxvt -visual -sb -st -tr -rv
+set $term alacritty
 
 #assign [title="ncmpcpp"] 3
 #assign [title="alsamixer"] 3
@@ -10,6 +10,7 @@ assign [title="qutebrowser"] 3
 
 #exec $term -e sudo aptitude
 exec qutebrowser
+exec picom
 
 # use window title, but no border \\ 1 px border \\ nothing
 bindsym $mod+t border normal 0

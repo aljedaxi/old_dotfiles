@@ -1,2 +1,4 @@
-exec i3
-exec sh ~/.fehbg &
+nitrogen --restore &
+xcompmgr &
+setxkbmap us -variant colemak &
+exec i3 
