@@ -10,11 +10,10 @@ assign [title="qutebrowser"] 3
 
 #exec $term -e sudo aptitude
 exec qutebrowser
-exec picom
 
 # use window title, but no border \\ 1 px border \\ nothing
-bindsym $mod+t border normal 0
-bindsym $mod+y border pixel 1
+#bindsym $mod+t border normal 0
+#bindsym $mod+y border pixel 1
 bindsym $mod+u border none
 bindsym $mod+Shift+space move scratchpad
 bindsym $mod+Control+space move workspace 1
@@ -38,8 +37,9 @@ bindsym $mod+q kill
 
 #hotkeys
 
-bindsym $mod+shift+a exec $term -e alsamixer
+bindsym $mod+shift+a exec $term -e pulsemixer
 bindsym $mod+shift+n exec $term -e ncmpcpp
+bindsym $mod+t exec telegram-desktop
 #bindsym $mod+Shift+Right exec amixer set Master 5.0%+
 #bindsym $mod+Shift+Left exec amixer set Master 5.0%-
 #bindsym $mod+Shift+Up exec amixer set Master 1.0%+
