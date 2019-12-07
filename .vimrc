@@ -61,8 +61,8 @@ set ai
 compiler gcc
 syn on
 set t_Co=256
-set shiftwidth=4
-set tabstop=4
+set shiftwidth=2
+set tabstop=2
 set backspace=2
 set nrformats=
 set spell
@@ -101,6 +101,13 @@ let java_allow_cpp_keywords=1
 "set sm
 
 "yaml stuff
-autocmd BufEnter *.yaml set shiftwidth=1
-autocmd BufEnter *.yaml set tabstop=1
+autocmd BufEnter *.yaml set shiftwidth=2
+autocmd BufEnter *.yaml set tabstop=2
 autocmd BufEnter *.yaml set expandtab
+autocmd BufEnter *.yml set shiftwidth=2
+autocmd BufEnter *.yml set tabstop=2
+autocmd BufEnter *.yml set expandtab
+
+"js
+autocmd BufEnter *.js set shiftwidth=2
+autocmd BufEnter *.js set tabstop=2
