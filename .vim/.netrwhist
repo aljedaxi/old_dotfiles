@@ -1,5 +1,11 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
-let g:netrw_dirhist_1='/home/daxi/txt/4_pleasure/WYRM/DUNE'
-let g:netrw_dirhist_2='/home/daxi/.config'
-let g:netrw_dirhist_3='/home/daxi'
+let g:netrw_dirhistcnt =9
+let g:netrw_dirhist_9='/home/daxi/.zsh'
+let g:netrw_dirhist_8='/home/daxi/matoi/the_left/classes'
+let g:netrw_dirhist_7='/home/daxi/matoi/doccoji'
+let g:netrw_dirhist_6='/home/daxi/.telegram-cli'
+let g:netrw_dirhist_5='/home/daxi/matoi/doccoji'
+let g:netrw_dirhist_4='/home/daxi/.config/dunst'
+let g:netrw_dirhist_3='/home/daxi/jinja2_latexing'
+let g:netrw_dirhist_2='/home/daxi/matoi'
+let g:netrw_dirhist_1='/home/daxi/.git'
