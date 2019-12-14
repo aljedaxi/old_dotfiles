@@ -23,8 +23,8 @@ noremap J N
 noremap k e
 noremap K E
 
-noremap ' ;
-noremap " :
+"noremap ' ;
+"noremap " :
 
 noremap gh gk
 noremap gj gh
