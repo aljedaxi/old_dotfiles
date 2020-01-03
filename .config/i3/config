@@ -2,10 +2,10 @@ set $mod Mod4
 set $n Mod1
 set $term alacritty
 
-#assign [title="ncmpcpp"] 3
-#assign [title="alsamixer"] 3
-assign [title="discord"] 2
-assign [title="Discord"] 2
+# assign [title="ncmpcpp"] 3
+# assign [title="alsamixer"] 3
+# assign [title="discord"] 2
+# assign [title="Discord"] 2
 assign [title="qutebrowser"] 3
 
 #exec $term -e sudo aptitude
