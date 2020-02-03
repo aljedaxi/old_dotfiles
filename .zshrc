@@ -1,5 +1,4 @@
 #al daxiin config for the Zoomer shell
-
 HISTFILE=~/.histfile
 HISTSIZE=100000
 SAVEHIST=$HISTSIZE
@@ -34,12 +33,11 @@ source ~/.zsh/zsh-syntax-highlighting-filetypes/zsh-syntax-highlighting-filetype
 #git stuff
 autoload -U add-zsh-hook
 
-#nvm stuff
-source /usr/share/nvm/init-nvm.sh
+#don't load nvm until you need it; you can still run `node` without it
+alias nvm='source /usr/share/nvm/init-nvm.sh && alias nvm="nvm" && nvm'
 
 #edit command with ^c
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-
