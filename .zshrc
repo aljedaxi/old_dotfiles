@@ -7,7 +7,11 @@ unsetopt beep
 
 PROMPT="%F{175}%2~ %(?.%F{white}.%F{red})> "
 
-alias ls="ls --color" ll="ls -l"
+alias ls="ls --color" \
+	ll="ls -l" \
+	networks-fucked-man="sudo systemctl restart NetworkManager.service" \
+	xmentask='task add tag:xMentium pri:M' \
+	gen-ctags='ctags -R 2> /dev/null'
 
 autoload -Uz compinit
 typeset -i updated_at=$(date +'%j' -r ~/.zcompdump 2>/dev/null || stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null)
@@ -28,7 +32,7 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-syntax-highlighting-filetypes/zsh-syntax-highlighting-filetypes.zsh
 
 #git stuff
-# autoload -U add-zsh-hook
+autoload -U add-zsh-hook
 
 #nvm stuff
 source /usr/share/nvm/init-nvm.sh
@@ -39,4 +43,3 @@ bindkey '^e' edit-command-line
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
-alias xmentask='task add proj:xMentium pri:M'

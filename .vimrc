@@ -6,18 +6,37 @@
 "cmap  se textwidth=80 
 "
 call plug#begin()
-	" comment with gc, gcc
-	" Plug 'pangloss/vim-javascript'
-	" Plug 'mxw/vim-jsx'
 	Plug 'mattn/emmet-vim'
 	Plug 'othree/yajs.vim'
+
+	Plug 'w0rp/ale'
+
+	Plug 'SirVer/ultisnips'
+	Plug 'honza/vim-snippets'
+	let g:UltiSnipsExpandTrigger="<tab>"
+	let g:UltiSnipsJumpForwardTrigger="<c-b>"
+	let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+	let g:UltiSnipsEditSplit="horizontal"
+
+	" There's also !, which starts the line off with a bang. Type !chmod +x and get :!chmod +x path/to/file.
+	" Press y. to yank an absolute path for the file under the cursor.
+	" Press ~ to go home.
 	Plug 'tpope/vim-commentary'
-	let g:user_emmet_leader_key='<Tab>'
+	Plug 'tpope/vim-vinegar'
+	Plug 'tpope/vim-fugitive'
 	let g:user_emmet_settings = {
 	\  'javascript.jsx' : {
 		\      'extends' : 'jsx',
 		\  },
 	\}
+	let g:ale_fixers = {'javascript': ['xo']}
+	let g:ale_linters = {'javascript': ['xo']}
+	let g:ale_sign_error = '>' 
+	let g:ale_sign_warning = '.'
+	let g:ale_lint_text_changed = 'never'
+	let g:ale_lint_insert_leave = 0
+	let g:ale_lint_on_enter = 0 
+	let g:ale_fix_on_save = 1
 call plug#end()
 
 " colemak stuff
@@ -65,9 +84,8 @@ call plug#end()
 	noremap <C-w><S-BS> <C-w>H
 
 "wangblows
-	cmap X se key=
-	cmap jc !javac %
-	cmap jr !javac %
+	" cmap jc !javac %
+	" cmap jr !javac %
 	nmap <C-PageUp> ]s
 	nmap <C-PageDown> [s
 	set nu!
@@ -86,13 +104,16 @@ call plug#end()
 	set incsearch
 	se guifont=terminus:h12:cANSI
 	set nocompatible
+  "this autofolds via indent, but shows the first level of indent. Set foldlevel to 0 to fold everything
+  "zm increases foldlevel by one; zr decreases by one; zR decreases to zero
+  set foldmethod=indent
+
+"general
+  "the filesystem browser
+  let g:netrw_banner = 0
 
 colorscheme al-daxiin
 hi Normal guibg=NONE ctermbg=NONE
-
-"this autofolds via indent, but shows the first level of indent. Set foldlevel to 0 to fold everything
-"zm increases foldlevel by one; zr decreases by one; zR decreases to zero
-set foldmethod=indent
 
 "python stuff
 autocmd BufEnter *.py set shiftwidth=4

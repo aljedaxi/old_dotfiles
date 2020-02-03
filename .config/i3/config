@@ -6,10 +6,10 @@ set $term alacritty
 # assign [title="alsamixer"] 3
 # assign [title="discord"] 2
 # assign [title="Discord"] 2
-assign [title="qutebrowser"] 3
+# assign [title="qutebrowser"] 3
 
 #exec $term -e sudo aptitude
-exec qutebrowser
+# exec qutebrowser
 
 # use window title, but no border \\ 1 px border \\ nothing
 #bindsym $mod+t border normal 0
