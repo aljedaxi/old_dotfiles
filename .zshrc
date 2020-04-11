@@ -46,4 +46,4 @@ alias init-nvm="source /usr/share/nvm/init-nvm.sh"
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
 
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="$HOME/.sh:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
