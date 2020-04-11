@@ -9,7 +9,22 @@ call plug#begin()
 	Plug 'mattn/emmet-vim'
 	Plug 'othree/yajs.vim'
 
-	Plug 'w0rp/ale'
+	"By the default, type <C-x> <C-o> in insert mode, Tsuquyomi shows completions.
+	"Type <C-]> in normal mode or visual mode, Tsuquyomi navigates to the
+	"location where the symbol under the cursor is defined.
+	":TsuTypeDefinition command is similar to :TsuDefinition. :TsuTypeDefinition navigates to the location where the type of the symbol under the cursor is defined.
+	"Type <C-^> in normal mode or visual mode, Tsuquyomi shows a list of location where the symbol under the cursor is referenced.
+	"Using the command :TsuRenameSymbol, you can rename the identifier under the cursor to a new name
+	"Move cursor onto readFile and call :TsuImport, so Tsuquyomi appends the import declaration.
+	Plug 'leafgarland/typescript-vim'
+	" Plug 'Quramy/tsuquyomi'
+	" let g:tsuquyomi_shortest_import_path = 1
+	Plug 'prabirshrestha/async.vim'
+	Plug 'prabirshrestha/asyncomplete.vim'
+	Plug 'prabirshrestha/vim-lsp'
+	Plug 'prabirshrestha/asyncomplete-lsp.vim'
+	Plug 'mattn/vim-lsp-settings'
+	Plug 'ryanolsonx/vim-lsp-typescript'
 
 	Plug 'SirVer/ultisnips'
 	Plug 'honza/vim-snippets'
@@ -29,14 +44,18 @@ call plug#begin()
 		\      'extends' : 'jsx',
 		\  },
 	\}
-	let g:ale_fixers = {'javascript': ['xo']}
-	let g:ale_linters = {'javascript': ['xo']}
-	let g:ale_sign_error = '>' 
-	let g:ale_sign_warning = '.'
-	let g:ale_lint_text_changed = 'never'
-	let g:ale_lint_insert_leave = 0
-	let g:ale_lint_on_enter = 0 
-	let g:ale_fix_on_save = 1
+
+	" Plug 'w0rp/ale'
+	" let g:ale_fixers = {'javascript': ['xo']}
+	" let g:ale_linters = {'javascript': ['xo']}
+	" let g:ale_sign_error = '>' 
+	" let g:ale_sign_warning = '.'
+	" let g:ale_lint_text_changed = 'never'
+	" let g:ale_lint_insert_leave = 0
+	" let g:ale_lint_on_enter = 0 
+	" let g:ale_fix_on_save = 1
+
+	Plug 'vimwiki/vimwiki'
 call plug#end()
 
 " colemak stuff
@@ -91,13 +110,13 @@ call plug#end()
 	set nu!
 	set ai
 	compiler gcc
-	syn on
+	syntax on
 	set t_Co=256
 	set shiftwidth=2
 	set tabstop=2
 	set backspace=2
 	set nrformats=
-	set spell
+	set spell spelllang=en_ca
 	set fileformat=unix
 	set foldlevel=0
 	set hlsearch
@@ -111,30 +130,45 @@ call plug#end()
 "general
   "the filesystem browser
   let g:netrw_banner = 0
+	" no backups
+	set nobk
+	" mouse mode
+	set mouse=a
+	set ruler
+	colorscheme al-daxiin
+	hi Normal guibg=NONE ctermbg=NONE
 
-colorscheme al-daxiin
-hi Normal guibg=NONE ctermbg=NONE
+" language server stuff
+	" https://medium.com/@vanuan/vim-for-typescript-and-react-in-2020-9724b9139be2
+	" https://github.com/prabirshrestha/vim-lsp
+	map <F8>   :LspDocumentDiagnostics <CR>
+	map <F2>   :LspHover <CR>
+	map <A-F6> :LspReon
+	map <A-F7> :LspReferences <CR>
 
-"python stuff
-autocmd BufEnter *.py set shiftwidth=4
-autocmd BufEnter *.py set tabstop=4
-autocmd BufEnter *.py set expandtab
 
-"java stuff
-let java_allow_cpp_keywords=1
+" language stuff
+	filetype plugin on
+	"python stuff
+	autocmd BufEnter *.py set shiftwidth=4
+	autocmd BufEnter *.py set tabstop=4
+	autocmd BufEnter *.py set expandtab
 
-" lisp stuff
-"set lisp
-"set sm
+	"java stuff
+	let java_allow_cpp_keywords=1
 
-"yaml stuff
-autocmd BufEnter *.yaml set shiftwidth=2
-autocmd BufEnter *.yaml set tabstop=2
-autocmd BufEnter *.yaml set expandtab
-autocmd BufEnter *.yml set shiftwidth=2
-autocmd BufEnter *.yml set tabstop=2
-autocmd BufEnter *.yml set expandtab
+	" lisp stuff
+	"set lisp
+	"set sm
 
-"js
-autocmd BufEnter *.js set shiftwidth=2
-autocmd BufEnter *.js set tabstop=2
+	"yaml stuff
+	autocmd BufEnter *.yaml set shiftwidth=2
+	autocmd BufEnter *.yaml set tabstop=2
+	autocmd BufEnter *.yaml set expandtab
+	autocmd BufEnter *.yml set shiftwidth=2
+	autocmd BufEnter *.yml set tabstop=2
+	autocmd BufEnter *.yml set expandtab
+
+	"js
+	autocmd BufEnter *.js set shiftwidth=2
+	autocmd BufEnter *.js set tabstop=2
