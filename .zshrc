@@ -39,7 +39,7 @@ autoload -U add-zsh-hook
 
 #don't load nvm until you need it; you can still run `node` without it
 #alias nvm='
-source /usr/share/nvm/init-nvm.sh 
+alias init-nvm="source /usr/share/nvm/init-nvm.sh"
 #&& alias nvm="nvm" && nvm'
 
 #edit command with ^c
