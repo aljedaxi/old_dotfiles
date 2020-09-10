@@ -1,20 +1,24 @@
-#al daxiin config for the Zoomer shell
+#al daxiin config for the zoomer shell
 HISTFILE=~/.histfile
 HISTSIZE=100000
 SAVEHIST=$HISTSIZE
 unsetopt beep
 
-leftScreenDimensions=1600x1200
+leftScreenDimensions=1440x900
+# 1360x768
 
 PROMPT="%F{175}%2~ %(?.%F{white}.%F{red})> "
 
 alias ls="ls --color" \
+	please="sudo" \
 	ll="ls -l" \
 	networks-fucked-man="sudo systemctl restart NetworkManager.service" \
 	xmentask='task add tag:xMentium pri:M' \
 	gen-ctags='ctags -R 2> /dev/null' \
-	leftScreenShot="scrot -o 'x.png' ; convert x.png -crop ${leftScreenDimensions}+0+0 screenshot.png; rm x.png; mv screenshot.png "
-	xmenStart="sh .screenlayout/default.sh; chromium &; cd xmentium/expression-management-app; sh launch.sh -m dbdump -s development"
+	left-screen-shot="scrot -o 'x.png' ; convert x.png -crop ${leftScreenDimensions}+0+0 screenshot.png; rm x.png; mv screenshot.png " \
+	left-timed-shot="scrot -o 'x.png' -cd 5; convert x.png -crop ${leftScreenDimensions}+0+0 screenshot.png; rm x.png; mv screenshot.png " \
+	xmenStart="sh .screenlayout/default.sh; chromium &; cd xmentium/expression-management-app; sh launch.sh -m dbdump -s development" \
+	prettify="prettier --write --end-of-line lf --arrow-parens avoid --jsx-bracket-same-line --single-quote --use-tabs --print-width 80"
 
 autoload -Uz compinit
 typeset -i updated_at=$(date +'%j' -r ~/.zcompdump 2>/dev/null || stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null)

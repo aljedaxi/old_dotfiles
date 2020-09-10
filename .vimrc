@@ -7,27 +7,17 @@
 "
 call plug#begin()
 	Plug 'mattn/emmet-vim'
-	Plug 'othree/yajs.vim'
 
-	"By the default, type <C-x> <C-o> in insert mode, Tsuquyomi shows completions.
-	"Type <C-]> in normal mode or visual mode, Tsuquyomi navigates to the
-	"location where the symbol under the cursor is defined.
-	":TsuTypeDefinition command is similar to :TsuDefinition. :TsuTypeDefinition navigates to the location where the type of the symbol under the cursor is defined.
-	"Type <C-^> in normal mode or visual mode, Tsuquyomi shows a list of location where the symbol under the cursor is referenced.
-	"Using the command :TsuRenameSymbol, you can rename the identifier under the cursor to a new name
-	"Move cursor onto readFile and call :TsuImport, so Tsuquyomi appends the import declaration.
-	Plug 'leafgarland/typescript-vim'
-	" Plug 'Quramy/tsuquyomi'
-	" let g:tsuquyomi_shortest_import_path = 1
-	Plug 'prabirshrestha/async.vim'
-	Plug 'prabirshrestha/asyncomplete.vim'
-	Plug 'prabirshrestha/vim-lsp'
-	Plug 'prabirshrestha/asyncomplete-lsp.vim'
-	Plug 'mattn/vim-lsp-settings'
-	Plug 'ryanolsonx/vim-lsp-typescript'
+	Plug 'fvictorio/vim-extract-variable'
+
+	Plug 'sheerun/vim-polyglot'
+	Plug 'pangloss/vim-javascript'
+	let g:javascript_plugin_jsdoc = 1
+	Plug 'HerringtonDarkholme/yats.vim'
 
 	Plug 'SirVer/ultisnips'
 	Plug 'honza/vim-snippets'
+	Plug 'ryanolsonx/vim-lsp-typescript'
 	let g:UltiSnipsExpandTrigger="<tab>"
 	let g:UltiSnipsJumpForwardTrigger="<c-b>"
 	let g:UltiSnipsJumpBackwardTrigger="<c-z>"
@@ -45,11 +35,11 @@ call plug#begin()
 		\  },
 	\}
 
-	" Plug 'w0rp/ale'
+	Plug 'w0rp/ale'
 	" let g:ale_fixers = {'javascript': ['xo']}
 	" let g:ale_linters = {'javascript': ['xo']}
-	" let g:ale_sign_error = '>' 
-	" let g:ale_sign_warning = '.'
+	let g:ale_sign_error = 'E' 
+	let g:ale_sign_warning = 'W'
 	" let g:ale_lint_text_changed = 'never'
 	" let g:ale_lint_insert_leave = 0
 	" let g:ale_lint_on_enter = 0 
